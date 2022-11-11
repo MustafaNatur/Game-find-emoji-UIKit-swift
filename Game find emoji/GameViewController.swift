@@ -10,6 +10,7 @@ import UIKit
 class GameViewController: UIViewController {
     
     //@IBOutlet var buttons: [UIButton]!
+    @IBOutlet weak var targetNuberLabel: UILabel!
     @IBOutlet var buttons: [UIButton]!
     
     lazy var game = Game(buttons.count)
@@ -24,10 +25,24 @@ class GameViewController: UIViewController {
     func setupView() {
         for index in 0..<buttons.count {
             buttons[index].setTitle(game.items[index].itemLabel, for: .normal)
+            buttons[index].layer.cornerRadius = 25
         }
+        targetNuberLabel.text = game.targetItem?.itemLabel
     }
 
 
+    @IBAction func buttonPressed(_ sender: UIButton) {
+        guard let buttonIndex = buttons.firstIndex(of: sender) else {return}
+        game.check(find: buttonIndex)
+        updateView()
+    }
+    
+    func updateView() {
+        for index in game.items.indices {
+            buttons[index].isHidden = game.items[index].isFound
+        }
+        targetNuberLabel.text = game.targetItem?.itemLabel
+    }
     /*
     // MARK: - Navigation
 
