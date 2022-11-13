@@ -30,7 +30,8 @@ class GameViewController: UIViewController {
     func setupView() {
         for index in 0..<buttons.count {
             buttons[index].setTitle(game.items[index].itemLabel, for: .normal)
-            buttons[index].isHidden = game.items[index].isFound
+            buttons[index].alpha = 1
+            buttons[index].isEnabled = true
             buttons[index].layer.cornerRadius = 25
         }
         targetNuberLabel.text = game.targetItem?.itemLabel
@@ -74,6 +75,8 @@ class GameViewController: UIViewController {
         if status == .start {
             newGameButton.isHidden = true
         } else if (status == .lose) {
+            newGameButton.isHidden = false
+        } else if (status == .win) {
             newGameButton.isHidden = false
         }
         statusLabel.text = status.rawValue
