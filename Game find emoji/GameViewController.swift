@@ -10,6 +10,7 @@ import UIKit
 class GameViewController: UIViewController {
     
     //@IBOutlet var buttons: [UIButton]!
+    @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var targetNuberLabel: UILabel!
     @IBOutlet var buttons: [UIButton]!
     
@@ -18,7 +19,6 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        // Do any additional setup after loading the view.
     }
     
     
@@ -42,6 +42,10 @@ class GameViewController: UIViewController {
             buttons[index].isHidden = game.items[index].isFound
         }
         targetNuberLabel.text = game.targetItem?.itemLabel
+        
+        if (game.statusGame == .win) {
+            statusLabel.text = "You win!"
+        }
     }
     /*
     // MARK: - Navigation

@@ -7,12 +7,18 @@
 
 import Foundation
 
+enum StatusGame {
+    case start
+    case win
+}
+
 struct item {
     var itemLabel: String
     var isFound: Bool
 }
 
 class Game {
+    var statusGame:StatusGame = .start
     
     var array = Array(0x1F601...0x1F64F)
     
@@ -44,6 +50,10 @@ class Game {
         if (items[find].itemLabel == targetItem?.itemLabel) {
             items[find].isFound = true
             targetItem = items.shuffled().first(where: {(item) -> Bool in item.isFound == false})
+        }
+        
+        if (targetItem == nil) {
+            statusGame = .win
         }
     }
     
