@@ -12,9 +12,13 @@ class GameViewController: UIViewController {
     //@IBOutlet var buttons: [UIButton]!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var targetNuberLabel: UILabel!
+    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet var buttons: [UIButton]!
     
-    lazy var game = Game(buttons.count)
+    lazy var game = Game(buttons.count, 30) { status, seconds in
+        self.timerLabel.text = seconds.secondsToString()
+        self.updateStatus(status: status)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,13 +44,24 @@ class GameViewController: UIViewController {
     func updateView() {
         for index in game.items.indices {
             buttons[index].isHidden = game.items[index].isFound
+            if game.items[index].isError {
+                UIView.animate(withDuration: 0.3) { [weak self] in
+                    self?.buttons[index].backgroundColor = .red
+                } completion: { [weak self] (_) in
+                    self?.buttons[index].backgroundColor = UIColor(red: 87/255, green: 95/255, blue: 214/255, alpha: 1)
+                    self?.game.items[index].isError = false
+                }
+            }
         }
         targetNuberLabel.text = game.targetItem?.itemLabel
+        updateStatus(status: game.statusGame)
         
-        if (game.statusGame == .win) {
-            statusLabel.text = "You win!"
-        }
     }
+    
+    func updateStatus(status: StatusGame) {
+        statusLabel.text = status.rawValue
+    }
+
     /*
     // MARK: - Navigation
 

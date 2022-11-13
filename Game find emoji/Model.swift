@@ -7,18 +7,19 @@
 
 import Foundation
 
-enum StatusGame {
-    case start
-    case win
+enum StatusGame: String {
+    case start = "Let's go!"
+    case win = "You win!"
+    case lose = "Game over..."
 }
 
 struct item {
     var itemLabel: String
     var isFound: Bool
+    var isError = false
 }
 
 class Game {
-    var statusGame:StatusGame = .start
     
     var array = Array(0x1F601...0x1F64F)
     
@@ -28,18 +29,46 @@ class Game {
     
     var targetItem:item?
     
-    init(_ count:Int){
-        self.itemsCount = count
-        arrInit()
+    var timer:Timer?
+    
+    var updateTimer:((StatusGame, Int)->Void)
+
+    var statusGame:StatusGame = .start {
+        didSet {
+            if (statusGame == .lose || statusGame == .win) {
+                stopGame()
+            }
+        }
     }
     
-    func arrInit() {
+
+    var timeForGame:Int {
+        didSet{
+            if timeForGame == 0 {
+                statusGame = .lose
+            }
+            updateTimer(statusGame,timeForGame)
+        }
+    }
+    
+
+    
+    init(_ count:Int, _ time:Int, updateTimer:@escaping (_ status:StatusGame, _ seconds:Int)->Void){
+        self.itemsCount = count
+        self.timeForGame = time
+        self.updateTimer = updateTimer
+        setupGame()
+    }
+    
+    func setupGame() {
         var randomData = array.shuffled()
         for _ in 0..<itemsCount {
             let item = item(itemLabel: String(UnicodeScalar(randomData.removeFirst())!), isFound: false)
             items.append(item)
         }
         updateTargetNumber()
+        updateTimer(statusGame, timeForGame)
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {[weak self] (_) in self?.timeForGame -= 1})
     }
     
     func updateTargetNumber() {
@@ -47,9 +76,12 @@ class Game {
     }
     
     func check(find: Int) {
+        guard statusGame == .start else {return}
         if (items[find].itemLabel == targetItem?.itemLabel) {
             items[find].isFound = true
             targetItem = items.shuffled().first(where: {(item) -> Bool in item.isFound == false})
+        } else {
+            items[find].isError = true
         }
         
         if (targetItem == nil) {
@@ -57,4 +89,19 @@ class Game {
         }
     }
     
+    func stopGame() {
+        timer?.invalidate()
+    }
+    
+    
+    
+}
+
+extension Int {
+    func secondsToString()->String {
+        let min = self / 60
+        let sec = self % 60
+        
+        return String(format: "%d:%02d", min, sec)
+    }
 }
