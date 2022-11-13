@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var newGameButton: UIButton!
     @IBOutlet var buttons: [UIButton]!
     
-    lazy var game = Game(buttons.count, 30) { status, seconds in
+    lazy var game = Game(buttons.count, 5) { status, seconds in
         self.timerLabel.text = seconds.secondsToString()
         self.updateStatus(status: status)
     }
@@ -30,12 +30,14 @@ class GameViewController: UIViewController {
     func setupView() {
         for index in 0..<buttons.count {
             buttons[index].setTitle(game.items[index].itemLabel, for: .normal)
+            buttons[index].isHidden = game.items[index].isFound
             buttons[index].layer.cornerRadius = 25
         }
         targetNuberLabel.text = game.targetItem?.itemLabel
         newGameButton.layer.cornerRadius = 25
         newGameButton.isHidden = true
     }
+    
     @IBAction func newGamePressed(_ sender: UIButton) {
         game.newGame()
         sender.isHidden = true
