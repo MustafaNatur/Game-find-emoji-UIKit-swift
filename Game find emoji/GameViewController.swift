@@ -13,6 +13,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var targetNuberLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var newGameButton: UIButton!
     @IBOutlet var buttons: [UIButton]!
     
     lazy var game = Game(buttons.count, 30) { status, seconds in
@@ -32,8 +33,15 @@ class GameViewController: UIViewController {
             buttons[index].layer.cornerRadius = 25
         }
         targetNuberLabel.text = game.targetItem?.itemLabel
+        newGameButton.layer.cornerRadius = 25
+        newGameButton.isHidden = true
     }
-
+    @IBAction func newGamePressed(_ sender: UIButton) {
+        game.newGame()
+        sender.isHidden = true
+        setupView()
+    }
+    
 
     @IBAction func buttonPressed(_ sender: UIButton) {
         guard let buttonIndex = buttons.firstIndex(of: sender) else {return}
@@ -59,6 +67,11 @@ class GameViewController: UIViewController {
     }
     
     func updateStatus(status: StatusGame) {
+        if status == .start {
+            newGameButton.isHidden = true
+        } else if (status == .lose) {
+            newGameButton.isHidden = false
+        }
         statusLabel.text = status.rawValue
     }
 

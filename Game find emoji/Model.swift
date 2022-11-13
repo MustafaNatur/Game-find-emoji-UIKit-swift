@@ -41,13 +41,13 @@ class Game {
         }
     }
     
-
-    var timeForGame:Int {
+    private var timeForGame:Int
+    var secondsGame:Int {
         didSet{
-            if timeForGame == 0 {
+            if secondsGame == 0 {
                 statusGame = .lose
             }
-            updateTimer(statusGame,timeForGame)
+            updateTimer(statusGame,secondsGame)
         }
     }
     
@@ -55,20 +55,28 @@ class Game {
     
     init(_ count:Int, _ time:Int, updateTimer:@escaping (_ status:StatusGame, _ seconds:Int)->Void){
         self.itemsCount = count
-        self.timeForGame = time
+        self.secondsGame = time
         self.updateTimer = updateTimer
+        self.timeForGame = time
         setupGame()
     }
     
     func setupGame() {
         var randomData = array.shuffled()
+        items.removeAll()
         for _ in 0..<itemsCount {
             let item = item(itemLabel: String(UnicodeScalar(randomData.removeFirst())!), isFound: false)
             items.append(item)
         }
         updateTargetNumber()
-        updateTimer(statusGame, timeForGame)
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {[weak self] (_) in self?.timeForGame -= 1})
+        updateTimer(statusGame, secondsGame)
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {[weak self] (_) in self?.secondsGame -= 1})
+    }
+    
+    func newGame() {
+        statusGame = .start
+        self.secondsGame = self.timeForGame
+        setupGame()
     }
     
     func updateTargetNumber() {
