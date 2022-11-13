@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var newGameButton: UIButton!
     @IBOutlet var buttons: [UIButton]!
     
-    lazy var game = Game(buttons.count, 5) { status, seconds in
+    lazy var game = Game(buttons.count, 30) { status, seconds in
         self.timerLabel.text = seconds.secondsToString()
         self.updateStatus(status: status)
     }
@@ -53,7 +53,9 @@ class GameViewController: UIViewController {
     
     func updateView() {
         for index in game.items.indices {
-            buttons[index].isHidden = game.items[index].isFound
+            //buttons[index].isHidden = game.items[index].isFound
+            buttons[index].alpha = game.items[index].isFound ? 0 : 1
+            buttons[index].isEnabled = !game.items[index].isFound
             if game.items[index].isError {
                 UIView.animate(withDuration: 0.3) { [weak self] in
                     self?.buttons[index].backgroundColor = .red
