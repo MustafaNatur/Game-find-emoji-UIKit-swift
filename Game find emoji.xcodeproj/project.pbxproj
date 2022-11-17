@@ -64,11 +64,11 @@
 				972B2025291D8DA900B676A7 /* SceneDelegate.swift */,
 				972B2037291DA26900B676A7 /* GameViewController.swift */,
 				972B2039291DA92000B676A7 /* Model.swift */,
+				97CDA7A8292638050068A785 /* StartViewController.swift */,
 				972B2029291D8DA900B676A7 /* Main.storyboard */,
 				972B202C291D8DAA00B676A7 /* Assets.xcassets */,
 				972B202E291D8DAA00B676A7 /* LaunchScreen.storyboard */,
 				972B2031291D8DAA00B676A7 /* Info.plist */,
-				97CDA7A8292638050068A785 /* StartViewController.swift */,
 			);
 			path = "Game find emoji";
 			sourceTree = "<group>";
