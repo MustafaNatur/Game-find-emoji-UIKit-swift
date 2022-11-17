@@ -100,9 +100,6 @@ class Game {
     func stopGame() {
         timer?.invalidate()
     }
-    
-    
-    
 }
 
 extension Int {
