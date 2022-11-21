@@ -8,22 +8,35 @@
 import UIKit
 
 class SelectTimeViewController: UIViewController {
-
+    var data:[Int] = []
+    @IBOutlet weak var tableView: UITableView! {
+        didSet {
+            tableView?.dataSource = self
+            tableView?.delegate = self
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension SelectTimeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "timeCell", for: indexPath)
+        cell.textLabel?.text = String(data[indexPath.row])
+        return cell
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
     }
-    */
+}
+
+extension SelectTimeViewController:UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        print(data[indexPath.row])
+    }
 
 }

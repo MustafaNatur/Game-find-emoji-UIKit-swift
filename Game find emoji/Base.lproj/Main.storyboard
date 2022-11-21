@@ -72,7 +72,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="BYh-e2-p77" kind="show" id="FMQ-4O-fLt"/>
+                                            <segue destination="BYh-e2-p77" kind="show" identifier="toTimeSettings" id="FMQ-4O-fLt"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="IaZ-aQ-vAT">
@@ -119,6 +119,16 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nMO-SK-FnK">
                                 <rect key="frame" x="0.0" y="88" width="390" height="722"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="timeCell" id="LCh-ef-szG">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LCh-ef-szG" id="rng-4U-kGb">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ybH-wQ-egY"/>
@@ -131,10 +141,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="N2x-XK-Az1"/>
+                    <connections>
+                        <outlet property="tableView" destination="nMO-SK-FnK" id="2Cw-6o-5VJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ukU-i6-Ywl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-789" y="-1244"/>
+            <point key="canvasLocation" x="-815" y="-1255"/>
         </scene>
         <!--Records-->
         <scene sceneID="FDd-sv-Ira">
@@ -150,7 +163,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kLy-Dy-68E" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="144" y="-586"/>
+            <point key="canvasLocation" x="91" y="-569"/>
         </scene>
         <!--Start View Controller-->
         <scene sceneID="hIj-aj-Mlx">
@@ -544,7 +557,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="luw-S7-222" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-758.46153846153845" y="125.82938388625591"/>
+            <point key="canvasLocation" x="-815" y="126"/>
         </scene>
     </scenes>
     <resources>
