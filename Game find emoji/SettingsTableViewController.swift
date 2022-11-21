@@ -24,6 +24,10 @@ class SettingsTableViewController: UITableViewController {
         super.viewWillAppear(animated)
         loadSettings()
     }
+    @IBAction func resetSetings(_ sender: Any) {
+        Settings.shared.resetSettings()
+        loadSettings()
+    }
     
     @IBAction func changeTimerState(_ sender: UISwitch) {
         Settings.shared.currentSettings.timerState = sender.isOn

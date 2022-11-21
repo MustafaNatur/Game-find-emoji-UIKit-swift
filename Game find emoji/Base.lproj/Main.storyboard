@@ -89,6 +89,9 @@
                                                     <rect key="frame" x="131.66666666666666" y="6.3333333333333321" width="126.99999999999997" height="30.999999999999996"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Default settings"/>
+                                                    <connections>
+                                                        <action selector="resetSetings:" destination="hwh-5P-DDJ" eventType="touchUpInside" id="l0l-ND-DHl"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
