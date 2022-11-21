@@ -26,6 +26,11 @@ class GameViewController: UIViewController {
         setupView()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        game.stopGame()
+    }
+    
     
     func setupView() {
         for index in 0..<buttons.count {
@@ -53,6 +58,7 @@ class GameViewController: UIViewController {
     }
     
     func updateView() {
+        
         for index in game.items.indices {
             //buttons[index].isHidden = game.items[index].isFound
             buttons[index].alpha = game.items[index].isFound ? 0 : 1

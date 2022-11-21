@@ -60,7 +60,7 @@ class Game {
         self.timeForGame = Settings.shared.currentSettings.timeForGame
         setupGame()
     }
-    
+
     func setupGame() {
         var randomData = array.shuffled()
         items.removeAll()
@@ -72,7 +72,8 @@ class Game {
         updateTimer(statusGame, secondsGame)
         
         guard !Settings.shared.currentSettings.timerState else {
-            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {[weak self] (_) in self?.secondsGame -= 1})
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {[weak self] (_) in self?.secondsGame -= 1
+            })
             return
         }
     }
