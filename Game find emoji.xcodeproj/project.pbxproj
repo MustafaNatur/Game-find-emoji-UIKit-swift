@@ -16,6 +16,8 @@
 		972B203A291DA92000B676A7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972B2039291DA92000B676A7 /* Model.swift */; };
 		97AB8EB129263ABC00B49767 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97AB8EB029263ABC00B49767 /* SettingsViewController.swift */; };
 		97CDA7A9292638050068A785 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CDA7A8292638050068A785 /* StartViewController.swift */; };
+		97EBCA46292BC7850032C866 /* SelectTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EBCA45292BC7850032C866 /* SelectTimeViewController.swift */; };
+		97EBCA48292BC7BC0032C866 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EBCA47292BC7BC0032C866 /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		972B2039291DA92000B676A7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		97AB8EB029263ABC00B49767 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		97CDA7A8292638050068A785 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		97EBCA45292BC7850032C866 /* SelectTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeViewController.swift; sourceTree = "<group>"; };
+		97EBCA47292BC7BC0032C866 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,10 +72,12 @@
 				972B2039291DA92000B676A7 /* Model.swift */,
 				97CDA7A8292638050068A785 /* StartViewController.swift */,
 				97AB8EB029263ABC00B49767 /* SettingsViewController.swift */,
+				97EBCA45292BC7850032C866 /* SelectTimeViewController.swift */,
 				972B2029291D8DA900B676A7 /* Main.storyboard */,
 				972B202C291D8DAA00B676A7 /* Assets.xcassets */,
 				972B202E291D8DAA00B676A7 /* LaunchScreen.storyboard */,
 				972B2031291D8DAA00B676A7 /* Info.plist */,
+				97EBCA47292BC7BC0032C866 /* SettingsTableViewController.swift */,
 			);
 			path = "Game find emoji";
 			sourceTree = "<group>";
@@ -151,7 +157,9 @@
 				972B2024291D8DA900B676A7 /* AppDelegate.swift in Sources */,
 				972B2038291DA26900B676A7 /* GameViewController.swift in Sources */,
 				972B2026291D8DA900B676A7 /* SceneDelegate.swift in Sources */,
+				97EBCA48292BC7BC0032C866 /* SettingsTableViewController.swift in Sources */,
 				972B203A291DA92000B676A7 /* Model.swift in Sources */,
+				97EBCA46292BC7850032C866 /* SelectTimeViewController.swift in Sources */,
 				97AB8EB129263ABC00B49767 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
