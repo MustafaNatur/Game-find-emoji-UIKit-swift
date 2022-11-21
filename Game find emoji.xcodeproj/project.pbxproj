@@ -14,6 +14,7 @@
 		972B2030291D8DAA00B676A7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 972B202E291D8DAA00B676A7 /* LaunchScreen.storyboard */; };
 		972B2038291DA26900B676A7 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972B2037291DA26900B676A7 /* GameViewController.swift */; };
 		972B203A291DA92000B676A7 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 972B2039291DA92000B676A7 /* Model.swift */; };
+		9777C141292BD9AA00AC7C9F /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9777C140292BD9AA00AC7C9F /* Settings.swift */; };
 		97CDA7A9292638050068A785 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97CDA7A8292638050068A785 /* StartViewController.swift */; };
 		97EBCA46292BC7850032C866 /* SelectTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EBCA45292BC7850032C866 /* SelectTimeViewController.swift */; };
 		97EBCA48292BC7BC0032C866 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97EBCA47292BC7BC0032C866 /* SettingsTableViewController.swift */; };
@@ -29,6 +30,7 @@
 		972B2031291D8DAA00B676A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		972B2037291DA26900B676A7 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		972B2039291DA92000B676A7 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		9777C140292BD9AA00AC7C9F /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		97CDA7A8292638050068A785 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		97EBCA45292BC7850032C866 /* SelectTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTimeViewController.swift; sourceTree = "<group>"; };
 		97EBCA47292BC7BC0032C866 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				972B202C291D8DAA00B676A7 /* Assets.xcassets */,
 				972B202E291D8DAA00B676A7 /* LaunchScreen.storyboard */,
 				972B2031291D8DAA00B676A7 /* Info.plist */,
+				9777C140292BD9AA00AC7C9F /* Settings.swift */,
 			);
 			path = "Game find emoji";
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			files = (
 				97CDA7A9292638050068A785 /* StartViewController.swift in Sources */,
 				972B2024291D8DA900B676A7 /* AppDelegate.swift in Sources */,
+				9777C141292BD9AA00AC7C9F /* Settings.swift in Sources */,
 				972B2038291DA26900B676A7 /* GameViewController.swift in Sources */,
 				972B2026291D8DA900B676A7 /* SceneDelegate.swift in Sources */,
 				97EBCA48292BC7BC0032C866 /* SettingsTableViewController.swift in Sources */,

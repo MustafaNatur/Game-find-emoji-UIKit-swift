@@ -34,6 +34,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZFn-wP-v5s">
                                                     <rect key="frame" x="319" y="6.3333333333333321" width="51" height="30.999999999999996"/>
+                                                    <connections>
+                                                        <action selector="changeTimerState:" destination="hwh-5P-DDJ" eventType="valueChanged" id="drI-q3-uFK"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -103,6 +106,10 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="GVb-1O-kK5"/>
+                    <connections>
+                        <outlet property="switchTimerState" destination="ZFn-wP-v5s" id="R6O-sQ-aK9"/>
+                        <outlet property="timeGameLabel" destination="VAa-xf-rUh" id="xhT-ni-L3f"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bLa-gl-MRA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
