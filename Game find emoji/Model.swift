@@ -53,11 +53,11 @@ class Game {
     
 
     
-    init(_ count:Int, _ time:Int, updateTimer:@escaping (_ status:StatusGame, _ seconds:Int)->Void){
+    init(_ count:Int, updateTimer:@escaping (_ status:StatusGame, _ seconds:Int)->Void){
         self.itemsCount = count
-        self.secondsGame = time
+        self.secondsGame = Settings.shared.currentSettings.timeForGame
         self.updateTimer = updateTimer
-        self.timeForGame = time
+        self.timeForGame = Settings.shared.currentSettings.timeForGame
         setupGame()
     }
     
@@ -70,7 +70,11 @@ class Game {
         }
         updateTargetNumber()
         updateTimer(statusGame, secondsGame)
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {[weak self] (_) in self?.secondsGame -= 1})
+        
+        guard !Settings.shared.currentSettings.timerState else {
+            timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: {[weak self] (_) in self?.secondsGame -= 1})
+            return
+        }
     }
     
     func newGame() {

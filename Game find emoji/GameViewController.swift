@@ -16,7 +16,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var newGameButton: UIButton!
     @IBOutlet var buttons: [UIButton]!
     
-    lazy var game = Game(buttons.count, 30) { status, seconds in
+    lazy var game = Game(buttons.count) { status, seconds in
         self.timerLabel.text = seconds.secondsToString()
         self.updateStatus(status: status)
     }
