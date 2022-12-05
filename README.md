@@ -36,5 +36,5 @@ https://github.com/MustafaNatur/Game-find-emoji-UIKit-swift.git
 ```
 2. Open in Xcode
 ```
-open Calculator.xcodeproj
+open Game find emoji.xcodeproj
 ```
