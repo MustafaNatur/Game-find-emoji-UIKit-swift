@@ -1,14 +1,16 @@
-# Game-find-emoji-UIKit-swift
-<img src="https://raw.githubusercontent.com/MustafaNatur/Calculator-app-UIKit-swift/Develop/Calculator/Calculator/Assets.xcassets/AppIcon.appiconset/ed5296e5972730d5899e9cc06e588702-76%402x.png" align="left" hspace="1" vspace="1" height="150" width="150">
+# Game find emoji UIKit swift
+<img src="images/4.png" align="left" hspace="1" vspace="1" height="150" width="150">
 
 # Calculator
 
-PET project: calculator app UIKit swift
+PET project: game UIKit swift
 
 
 ---
 
-### Screenshots
+
+
+###
 <table>
   <tr>
     <td><img src="images/1.png" width="320"></td>
@@ -16,22 +18,21 @@ PET project: calculator app UIKit swift
 </table>
 
 ### About it
-- This is my first project on Swift.
-- It is usual calculator with default operations. 
-- In the project i tried to keep track of all edge cases.
+- This is my PET project on Swift
+- This is a game where you have to find all the emoji in a certain amount of time
+- The application logic is based on the MVC pattern
 
 ### Functionality
-- simple mathimatical operations
-- changing the sign of the number by the button
-- deleting a number by one character
-- supports working with floating-point numbers
-- on the second screen you can customize color of calculator button (equally)
+- The app has multiple screens. Menu screen, game screen, settings screen
+- Handled all edge cases such as game time out, wrong emoji selected
+- The application uses UserDefaults to store the user's settings
+- You can configure the presence of a timer and its length
 
 ### Installation
 
-1. Clone the repo via git clone command.
+1. Clone the repo via git clone command
 ```
-https://github.com/MustafaNatur/Calculator-app-UIKit-swift.git
+https://github.com/MustafaNatur/Game-find-emoji-UIKit-swift.git
 ```
 2. Open in Xcode
 ```
