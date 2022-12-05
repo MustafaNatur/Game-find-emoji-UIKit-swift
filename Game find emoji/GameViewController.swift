@@ -30,8 +30,6 @@ class GameViewController: UIViewController {
         super.viewWillDisappear(true)
         game.stopGame()
     }
-    
-    
     func setupView() {
         for index in 0..<buttons.count {
             buttons[index].setTitle(game.items[index].itemLabel, for: .normal)
