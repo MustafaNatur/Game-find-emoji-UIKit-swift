@@ -1,7 +1,7 @@
 # Game find emoji UIKit swift
 <img src="images/4.png" align="left" hspace="1" vspace="1" height="150" width="150">
 
-# Calculator
+# Game find emoji
 
 PET project: game UIKit swift
 
