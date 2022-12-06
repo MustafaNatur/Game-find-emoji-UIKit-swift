@@ -7,10 +7,10 @@ PET project: game UIKit swift
 
 
 ---
+
+### Gameplay
 In this project, I decided to create a game. By pressing the start button, the timer starts and emoji cards appear. 
-The player's task is to find all the emojis that the game offers. The gameplay complicates the timer. 
-
-
+The player's task is to find all the emojis that the game offers. The gameplay complicates the timer.
 
 ###
 <table>
